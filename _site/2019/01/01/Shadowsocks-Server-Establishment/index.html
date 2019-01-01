@@ -1,0 +1,92 @@
+<h1 id="establish-ssserver">Establish ssserver</h1>
+
+<p>[root@shadowsocks-server src]# yum install lsof -y</p>
+
+<p>[root@shadowsocks-server src]# cd /usr/local/src/</p>
+
+<p>[root@shadowsocks-server src]# wget –no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-19.6.tar.gz#md5=c607dd118eae682c44ed146367a17e26</p>
+
+<p>[root@shadowsocks-server src]# tar -zvxf setuptools-19.6.tar.gz</p>
+
+<p>[root@shadowsocks-server src]# yum -y install epel-release</p>
+
+<p>[root@shadowsocks-server src]# yum -y install pip python-pip</p>
+
+<p>[root@shadowsocks-server src]# pip install –-upgrade pip</p>
+
+<p>[root@shadowsocks-server src]# pip install shadowsocks</p>
+
+<p>[root@shadowsocks-server src]# pip install M2Crypto</p>
+
+<p>[root@shadowsocks-server src]# vi /etc/shadowsocks.json</p>
+
+<p>{</p>
+
+<p>“server”: “0.0.0.0”,</p>
+
+<p>“port_password”: {</p>
+
+<p>“<strong><em>port1</em></strong>”: “<strong><em>passwd1</em></strong>”,</p>
+
+<p>“<strong><em>port2</em></strong>”: “<strong><em>passwd2</em></strong>”,</p>
+
+<p>“<strong><em>port3</em></strong>”: “<strong><em>passwd3</em></strong>”</p>
+
+<p>},</p>
+
+<p>“timeout”:300,</p>
+
+<p>“method”:”aes-256-cfb”,</p>
+
+<p>“fast_open”: false</p>
+
+<p>}</p>
+
+<hr />
+<p>[root@shadowsocks-server src]# vim /etc/systemd/system/ssserver.service</p>
+
+<p>[Unit]</p>
+
+<p>Description=ssserver</p>
+
+<p>[Service]</p>
+
+<p>TimeoutStartSec=0</p>
+
+<p>ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json</p>
+
+<p>[Install]</p>
+
+<p>WantedBy=multi-user.target</p>
+
+<hr />
+
+<p>[root@shadowsocks-server src]# systemctl enable ssserver</p>
+
+<p>[root@shadowsocks-server src]# systemctl start ssserver</p>
+
+<p>[root@shadowsocks-server src]# systemctl status ssserver -l</p>
+
+<p>[root@shadowsocks-server src]# lsof -i:<strong><em>port</em></strong></p>
+
+<h1 id="install-boost">Install boost</h1>
+
+<p>[root@shadowsocks-server src]# uname -r</p>
+
+<p>[root@shadowsocks-server src]# wget –no-check-certificate https://blog.asuhu.com/sh/ruisu.sh</p>
+
+<p>[root@shadowsocks-server src]# bash ruisu.sh</p>
+
+<p>[root@shadowsocks-server src]# wget –no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh &amp;&amp; chmod +x appex.sh &amp;&amp; bash appex.sh install</p>
+
+<p>[root@shadowsocks-server src]# uname -r</p>
+
+<p>[root@shadowsocks-server src]# wget -N –no-check-certificate https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh &amp;&amp; bash serverspeeder-all.sh</p>
+
+<p>[root@shadowsocks-server src]# service serverSpeeder start</p>
+
+<h1 id="firewall">Firewall</h1>
+
+<p>[root@shadowsocks-server src]# firewall-cmd –add-port=<strong><em>port</em></strong>/tcp –permanent</p>
+
+<p>[root@shadowsocks-server src]# firewall-cmd –remove-port=<strong><em>port</em></strong>/tcp –permanent</p>

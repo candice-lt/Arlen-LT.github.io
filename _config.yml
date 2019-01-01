@@ -1,5 +1,5 @@
 # general configuration
-url: http://excentris.net
+url: http://arlen-lt.github.io
 baseurl: ''
 
 # compass configuration
@@ -7,9 +7,9 @@ compass:
   # an avatar or logo (optional)
   logo: "/images/compass.png"
   # author will appear under the avatar (optional)
-  author: "Compass"
+  author: "Arlen"
   # tagline will appear under the title (optional)
-  tagline: "The <a href='http://jekyllrb.com'>Jekyll</a> theme for your personal landing page"
+  tagline: "与其感慨路难行 不如马上出发"
   # if include_content is true, the contents of the content.html include will be
   # added right above the generated item list, if present
   include_content: true
@@ -18,7 +18,7 @@ compass:
   # Tracking Code to that file.
   include_analytics: false
   # Twitter @username (as defined by the Twitter Card specs)
-  twitter: "compass"
+  twitter: "Arlen49615388"
 
 # exclude
 exclude: ["CNAME", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
@@ -31,3 +31,4 @@ highlighter: rouge
 permalink: pretty
 
 theme: jekyll-theme-cayman
+

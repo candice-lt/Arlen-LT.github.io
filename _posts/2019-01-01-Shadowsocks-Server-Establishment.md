@@ -1,10 +1,18 @@
-# Establish sserver
+---
+layout: post
+title:  "Shdowsocks Server Establishment"
+author: "Arlen"
+date:   2019-01-01
+tags:   "VPN"
+---
+
+# Establish ssserver
 
 [root@shadowsocks-server src]# yum install lsof -y
 
 [root@shadowsocks-server src]# cd /usr/local/src/
 
-[root@shadowsocks-server src]# wget --no-check-certificate  https://pypi.python.org/packages/source/s/setuptools/setuptools-19.6.tar.gz#md5=c607dd118eae682c44ed146367a17e26
+[root@shadowsocks-server src]# wget --no-check-certificate https://pypi.python.org/packages/source/s/setuptools/setuptools-19.6.tar.gz#md5=c607dd118eae682c44ed146367a17e26
 
 [root@shadowsocks-server src]# tar -zvxf setuptools-19.6.tar.gz
 
