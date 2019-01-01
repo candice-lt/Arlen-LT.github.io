@@ -30,4 +30,4 @@ highlighter: rouge
 # Permalinks
 permalink: pretty
 
-theme: jekyll-theme-hacker
+theme: jekyll-theme-cayman
