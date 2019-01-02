@@ -1,6 +1,6 @@
 ---
 layout: base
-title:  "Shdowsocks Server Establishment"
+title:  "Shadowsocks Server Establishment"
 author: "Arlen"
 date:   2019-01-01
 tags:   "VPN"
