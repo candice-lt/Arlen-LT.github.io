@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: base
 title:  "Shdowsocks Server Establishment"
 author: "Arlen"
 date:   2019-01-01
@@ -7,7 +7,6 @@ tags:   "VPN"
 ---
 
 # Establish ssserver
-
 [root@shadowsocks-server src]# yum install lsof -y
 
 [root@shadowsocks-server src]# cd /usr/local/src/
